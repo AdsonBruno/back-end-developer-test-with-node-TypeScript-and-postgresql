@@ -1270,6 +1270,11 @@ picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.3.1:
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.1.tgz#3ba3833733646d9d3e4995946c1365a67fb07a42"
   integrity sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==
 
+postgres@^3.3.4:
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/postgres/-/postgres-3.3.4.tgz#09635eb9fae26dd449db9b1bd3956ef56c5b78fa"
+  integrity sha512-XVu0+d/Y56pl2lSaf0c7V19AhAEfpVrhID1IENWN8nf0xch6hFq6dAov5dtUX6ZD46wfr1TxvLhxLtV8WnNsOg==
+
 prelude-ls@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
