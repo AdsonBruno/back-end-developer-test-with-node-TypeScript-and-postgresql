@@ -19,7 +19,7 @@ Este projeto tem como objetivo o teste para a vaga de desenvolvedor back-end com
 ## Entidades
 
 <pre>
-<<<<<<< HEAD
+
 forms_answers {
     id: string;
     name: string;
@@ -28,14 +28,4 @@ forms_answers {
     phone: string;
     created_at: date;
   }
-=======
-  forms_answers {
-  id: string;
-  name: string;
-  email: string;
-  cpf: string;
-  phone: string;
-  created_at: date;
-}
->>>>>>> f5181e34c68d9fdfabd2288bbc4d009cabbf9268
 </pre>
