@@ -29,3 +29,20 @@ forms_answers {
     created_at: date;
   }
 </pre>
+
+## Rodando o projeto
+
+```bash
+#instale as dependências com:
+> yarn install
+```
+
+```bash
+#inicie o postgres com o docker usando:
+> yarn postgres-start
+```
+
+```bash
+#para iniciar o projeto na linha de comando:
+> yarn start:dev
+```
