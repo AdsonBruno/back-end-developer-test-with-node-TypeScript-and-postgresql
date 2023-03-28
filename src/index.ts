@@ -1,21 +1,21 @@
 import express from 'express';
 import { config } from 'dotenv';
 import { GetClientsController } from './controllers/get-clients/get-clients';
-import { PostgresClientsRepository } from './repositories/get-clients/postgres-get-clients';
-import { PostgresClient } from './database/postgres';
+import { PrismaClientsRepository } from './repositories/get-clients/prisma-get-clients';
+import { PrismaConnector } from './database/prisma';
 
 const main = async () => {
   config();
 
   const app = express();
 
-  await PostgresClient.connect();
+  await PrismaConnector.connect();
 
   app.get('/clients', async (req, res) => {
-    const postgresGetClientsRepository = new PostgresClientsRepository();
+    const prismaGetClientsRepository = new PrismaClientsRepository();
 
     const getClientsController = new GetClientsController(
-      postgresGetClientsRepository
+      prismaGetClientsRepository
     );
 
     const { body, statusCode } = await getClientsController.handle();
