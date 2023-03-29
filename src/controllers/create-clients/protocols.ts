@@ -1,4 +1,11 @@
 import { Client } from '../../models/clients';
+import { HttpRequest, HttpResponse } from '../protocols';
+
+export interface ICreateClientController {
+  handle(
+    httpRequest: HttpRequest<CreateClientParams>
+  ): Promise<HttpResponse<Client>>;
+}
 
 export interface CreateClientParams {
   name: string;
