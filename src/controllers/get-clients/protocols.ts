@@ -7,4 +7,5 @@ export interface IGetClientsController {
 
 export interface IGetClientsRepository {
   getClients(): Promise<Client[]>;
+  getClientsAtRange(startDate: Date, endDate: Date): Promise<Client[]>;
 }
