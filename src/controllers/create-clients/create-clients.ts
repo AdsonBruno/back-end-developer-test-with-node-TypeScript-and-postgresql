@@ -1,4 +1,5 @@
 import { Client } from '../../models/clients';
+import { checkEmailExists } from '../../repositories/create-clients/check-email-exists';
 import { HttpRequest, HttpResponse } from '../protocols';
 import {
   CreateClientParams,
@@ -27,6 +28,15 @@ export class CreateClientController implements ICreateClientController {
         return {
           statusCode: 400,
           body: 'Email inválido! Por favor, insira um email válido',
+        };
+      }
+
+      const existingClient = await checkEmailExists(httpRequest.body.email);
+
+      if (existingClient) {
+        return {
+          statusCode: 400,
+          body: 'O email fornecido já está em uso.',
         };
       }
 
