@@ -5,6 +5,7 @@ import {
   ICreateClientController,
   ICreateClientRepository,
 } from './protocols';
+import isEmail from 'validator/lib/isEmail';
 
 export class CreateClientController implements ICreateClientController {
   constructor(
@@ -19,6 +20,13 @@ export class CreateClientController implements ICreateClientController {
         return {
           statusCode: 400,
           body: 'por favor especifique um body',
+        };
+      }
+
+      if (!isEmail(httpRequest.body.email)) {
+        return {
+          statusCode: 400,
+          body: 'Email inválido! Por favor, insira um email válido',
         };
       }
 
