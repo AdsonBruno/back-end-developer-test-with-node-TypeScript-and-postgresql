@@ -3,6 +3,10 @@ import { HttpResponse } from '../protocols';
 
 export interface IGetClientsController {
   handle(): Promise<HttpResponse<Client[]>>;
+  handleClientsAtRange(
+    startDate: Date,
+    endDate: Date
+  ): Promise<HttpResponse<Client[]>>;
 }
 
 export interface IGetClientsRepository {

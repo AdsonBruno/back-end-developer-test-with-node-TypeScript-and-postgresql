@@ -27,6 +27,24 @@ const main = async () => {
     res.send(body).status(statusCode);
   });
 
+  app.get('/clients/:start/:end', async (req, res) => {
+    const { start, end } = req.params;
+
+    const startDate = new Date(start);
+    const endDate = new Date(end);
+
+    const prismaGetClientsRepository = new PrismaClientsRepository();
+
+    const getClientsController = new GetClientsController(
+      prismaGetClientsRepository
+    );
+
+    const { body, statusCode } =
+      await getClientsController.handleClientsAtRange(startDate, endDate);
+
+    res.send(body).status(statusCode);
+  });
+
   app.post('/clients', async (req, res) => {
     const prismaCreateClientRepository = new PrismaCreateClient();
     const createClientController = new CreateClientController(
