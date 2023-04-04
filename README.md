@@ -8,8 +8,11 @@ Este projeto tem como objetivo o teste para a vaga de desenvolvedor back-end com
 
 - Node.js
 - TypeScript
+- Docker
 - Express
 - PostgresSql
+- Prisma
+- Validator
 
 ## Conceitos aplicados
 
@@ -52,7 +55,7 @@ forms_answers {
 > yarn start:dev
 ```
 
-### Endpoints:
+### Endpoints
 
 Endpoint base da aplicação `http://localhost:8000/`
 
@@ -101,6 +104,39 @@ Obter a lista de todos os clientes cadastrados
     "cpf": "987456321",
     "phone": "82999999999",
     "createdAt": 2023-03-29T00:44:48.962Z
+  }
+}
+```
+
+Obter a lista de todos os clientes cadastrados dentro de um range data de início e data de fim
+
+### `GET` -> `/clients/:start/:end`
+
+```json
+{
+  {
+    "id": 1,
+    "name": "Fulano",
+    "email": "fulanodetal@site.com",
+    "cpf": "123456789",
+    "phone": "82999999999",
+    "createdAt": 2023-03-29T00:41:48.962Z
+  },
+  {
+    "id": 2,
+    "name": "Beltrano",
+    "email": "beltrano@site.com",
+    "cpf": "987456321",
+    "phone": "82999999999",
+    "createdAt": 2023-03-29T00:44:48.962Z
+  },
+  {
+    "id": 3,
+    "name": "Ciclano",
+    "email": "ciclano@site.com",
+    "cpf": "145698753",
+    "phone": "82982453687",
+    "createdAt": 2023-04-01T00:44:48.962Z
   }
 }
 ```
